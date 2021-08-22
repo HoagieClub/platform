@@ -1,7 +1,10 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useUser } from '@auth0/nextjs-auth0'
-import { Pane, Button, majorScale, Spinner, LayoutAutoIcon, Text } from 'evergreen-ui'
+import Project from '../components/Project'
+import { Pane, Button, majorScale, Spinner, EnvelopeIcon, ShapesIcon, AnnotationIcon, ExchangeIcon } from 'evergreen-ui'
+import Link from 'next/link'
+
 
 export default function Index() {
   const { user, error, isLoading } = useUser();
@@ -46,50 +49,58 @@ export default function Index() {
       <Pane>
       <Pane display="flex" justifyContent="center" 
       alignItems="center"
-      marginX={majorScale(1)}
+      marginX={majorScale(4)}
       paddingBottom={majorScale(10)}
       paddingTop={majorScale(8)}
       >
         <Pane 
-            borderRadius={20} 
-            display="flex"
-            alignItems="center"
-            flexDirection="column"
-            elevation={1} 
-            background="white" 
-            marginX={20} 
-            maxWidth="800px" 
-            width="100%"
-            paddingX="10px"
-            paddingTop={majorScale(5)}
-            paddingBottom={majorScale(10)}
-          >
-            <LayoutAutoIcon size={100} color="#F58025"/>
-            <Pane
-                marginTop="30px"
-                maxWidth="600px"
-                width="100%"
-                textAlign="center"
-            >
-              <Section title="Hoagie is the Princeton application platform." bold="Coming Fall 2021.">
-                  <p>
-                    Hoagie is more than just a couple of different campus applications; it is an integrated system. Every application is built with others in mind, filling different gaps in your campus experience. Hoagie Apps allow you to use the same profile accross the entire system, meaning you can do things like save your favorite courses in one application and then see them pop up on a different one instantly.
-                  </p>
-                  <p>
-                    If you're interested in being part of creating this platform—the Hoagie <b>Club</b>—be on the lookout for recruitement emails early fall!
-                  </p>
-                  <Button disabled>Apply to Hoagie</Button>
-              </Section>
-              <Section title="How does this work?">
-                The applications are all built from scratch, using shared UI elements, frameworks, and APIs. This allows all apps to get the latest updates all at the same time, show things like your set course schedule accross different applications, and just generally provide a better user experience. 
-              </Section>
-              <Section title="Why " bold="Hoagie?">
-                In a world of Tiger[name], there was a need for something fresh. Hoagies represent many things—they represent how some in New Jersey call sandwiches. They also represent a certain iconic sandwich shop that has satisfied many Princetonian's late night cravings. In short, there's many things connecting Tigers to Hoagies, and Hoagie is embracing it to the fullest as we attempt to add a new word to Princeton's club names.
-              </Section>
-              <Section title="I wanna learn more!">
-                More information will become available quite soon but if you'd like to connect now, feel free to email <b>hoagie@princeton</b>.
-              </Section>
-            </Pane>
+          width="100%" 
+          maxWidth="820px"
+        >
+        <Pane
+          fontSize="16pt"
+          marginBottom="40px"
+        >
+          Welcome to <b>Hoagie</b>, the Princeton application system.
+        </Pane>
+        <Pane className="projects">
+          <Project
+            name="mail"
+            description="Send emails to all undergraduate students, instantly."
+            icon={EnvelopeIcon}
+          />
+          <Project
+            name="club"
+            color="#6C47AE"
+            description="Join the team working on Hoagie and be part of real development projects."
+            icon={ShapesIcon}
+          />
+          <Project
+            name="trade"
+            color="#6C47AE"
+            description="Buy, sell, and trade with other students."
+            icon={ExchangeIcon}
+            isComingSoon
+          />
+          <Project
+            name="menus"
+            color="#6C47AE"
+            description="Get the latest information from all campus cafeterias."
+            icon={AnnotationIcon}
+            isComingSoon
+          />
+        </Pane>
+        <Pane
+          fontSize="16pt"
+          marginTop="40px"
+        >
+          <p>
+            Hoagie Platform and its Apps are built and ran by Princeton students as part of Hoagie Club.  Want to learn more about how we want to change the way our campus applications work?<br />
+          </p>
+          <p>
+            <b><u><Link href='/FAQ'>Read the FAQ here</Link></u></b>.
+          </p>
+        </Pane>
         </Pane>
       </Pane>
       </Pane>
