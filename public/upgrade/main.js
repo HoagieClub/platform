@@ -570,10 +570,10 @@ class Logo extends Rect {
     super(xCoor, yCoor, 110, 75, moveX, moveY, vel);
     this.image = new Image();
     this.imagePaths = [
-      '/dir/upgrade/images/dvd-logo-white.svg',
-      '/dir/upgrade/images/dvd-logo-pink.svg',
-      '/dir/upgrade/images/dvd-logo-yellow.svg',
-      '/dir/upgrade/images/dvd-logo-blue.svg'
+      '/upgrade/images/dvd-logo-white.svg',
+      '/upgrade/images/dvd-logo-pink.svg',
+      '/upgrade/images/dvd-logo-yellow.svg',
+      '/upgrade/images/dvd-logo-blue.svg'
     ];
     this.imagePathIndex = Math.floor(Math.random() * this.imagePaths.length);
     this.setSrc();

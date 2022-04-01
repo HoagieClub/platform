@@ -11,7 +11,7 @@ module.exports = {
         return [
           {
             source: "/upgrade",
-            destination: "/dir/upgrade/index.html",
+            destination: "/upgrade/index.html",
           }
         ]
     }    
