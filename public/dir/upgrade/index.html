@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="/dir/upgrade/images/thumb.png">
+    <title>Upgrade to Hoagie GOLD!!!</title>
+    <style>
+        html {
+            overflow: hidden;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            font-family: monospace;
+            font-size: 16px;
+            line-height: 24px;
+            background-image: repeating-linear-gradient(yellow, purple 10%, green 20%);
+        }
+
+        .dvd-screensaver-controls {
+            position: absolute;
+            margin: 20px;
+            color: white;
+        }
+
+        #dvd-screensaver-speed {
+            vertical-align: middle;
+        }
+        .my-space {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+        }
+        .my {
+            color: black;
+            width: 300px;
+            font-family: serif;
+            border: #000 double;
+            padding: 20px;
+            background-color: white;
+        }
+        marquee {
+            color: #FF6708;
+        }
+        #dollar {
+            margin-top: -25px;
+        }
+        #home {
+            position: absolute;
+            z-index: 99;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+        .c {
+            text-decoration: line-through;
+            font-size: 14px;
+            color: red;
+            margin-top:-25px;
+        }
+        h4 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XE860KE6H"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2XE860KE6H');
+    </script>
+    <canvas id="dvd" width="1200" height="900"></canvas>
+    <div id="home"><a href="https://hoagie.io/"><img src="/dir/upgrade/images/gohome.gif" alt=""></a></div>
+    <div class="my-space">
+        <div class="my" id="my">
+            <div id="stuff">
+            <center>
+            <img src="/dir/upgrade/images/gold.png" width="150px" />
+            <img width="80px" src="/dir/upgrade/images/sale.gif">
+            <h3>UPGRADE TO HOAGIE GOLD TODAY FOR PREMIUM BENEFITS!!!</h3>
+            <marquee>FOR LIMITED TIME ONLY! Hoagie Gold for just 29.99 USD a month before tax. Payment is possible through 4 monthly installments through cash, fax, or crypto. DO NOT MISS YOUR CHANCE!!!</marquee>
+            </center>
+            GET <i><b>EXCLUSIVE!!!</b></i> benefits, INCLUDING...
+            <ul>
+            <li>Send as many as 1-5 emails a minute with Hoagie Mail.</li>
+            <li>Use NEW EXCLUSIVE PREMIUM GIFS!!!</li>
+            </ul>
+            and so much more...!<br/><br/>
+            <h4>
+                <div class="c">39.99 USD / month</div>
+                ONLY 29.99 USD / month
+            </h4>
+            <input width="200px" placeholder="Credit Card Number" /><br />
+            <img height="60px" src="/dir/upgrade/images/cards.gif">
+            <img id="dollar" height="100px" src="/dir/upgrade/images/dollar.gif"><br />
+            </div>
+            <img width="150px" src="/dir/upgrade/images/continue.gif" id="upgrade" />
+            <div id="gotcha" style="display:none">
+                <center>
+                <img src="/dir/upgrade/images/bunny.gif" width="200px" />
+                <img src="/dir/upgrade/images/gotcha.gif" width="200px" />
+            </center>
+                
+            </div>
+        </div>
+    </div>
+    <audio id="youtube" loop></audio>
+    <script src="/dir/upgrade/main.js"></script>
+    <script src="/dir/upgrade/sound.js"></script>
+
+</body>
+
+</html>
