@@ -1,31 +1,41 @@
-import { ThemeProvider, Pane, defaultTheme } from "evergreen-ui"
-import Button from "./Button"
-import styles from "./Theme.module.css"
+import { ThemeProvider } from 'evergreen-ui'
+import React from 'react'
+import { hoagiePurple, hoagieOrange, hoagieUI } from './themes'
 
-function Theme(props) {
-    let defTheme:any = defaultTheme
+interface ThemeProps {
+  /** alternate color theme, default is purple
+   * (current options: "purple", "blue", "orange") */
+  palette?: string;
+  /** React children (child components)
+   * @ignore */
+  children?: React.ReactNode
+}
 
-    const hoagieUI = {
-      ...defTheme,
-      fontFamilies: { 
-        ui: 'Nunito',
-      },
-      colors: {
-        ...defTheme.colors,
-        'hoagie-orange': '#DE7548',
-      },
-      components: {
-        ...defTheme.components,
-        Button,
-        },
-      }
-  
+/** Theme is an theme provider component meant for use as an app wrapper
+ *  for all Hoagie applications.
+ */
+function Theme({ palette = 'purple', children }:ThemeProps) {
+    let colorTheme;
+
+    switch (palette) {
+    case 'purple':
+        colorTheme = hoagiePurple;
+        break;
+    case 'blue':
+        colorTheme = hoagieUI;
+        break;
+    case 'orange':
+        colorTheme = hoagieOrange;
+        break;
+    default:
+        colorTheme = hoagieUI;
+    }
+
+    // document.body.style.backgroundColor = colorTheme.colors.blue100;
     return (
-      <ThemeProvider value={hoagieUI}>
-        <Pane className={styles.document}>
-          {props.children}
-        </Pane>
-      </ThemeProvider>
+        <ThemeProvider value={colorTheme}>
+            {children}
+        </ThemeProvider>
     )
 }
 
