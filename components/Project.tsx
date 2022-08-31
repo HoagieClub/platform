@@ -90,7 +90,7 @@ const Project = ({
                             size={400}
                             fontWeight={300}
                             color="grey700"
-                            lineHeight="16px"
+                            lineHeight="18px"
                         >
                             {description}
                         </Paragraph>

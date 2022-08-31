@@ -1,3 +1,7 @@
+body {
+    background-color: #E9DDFE;
+}
+
 .projects {
     display: flex;
     flex-direction: row;

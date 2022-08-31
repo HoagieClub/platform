@@ -12,9 +12,9 @@ function Content({ Component, pageProps }) {
     const user = useUser();
 
     return (
-        <Theme palette="orange">
+        <Theme palette="purple">
             <Layout>
-                <Nav name="mail" user={user} />
+                <Nav name="platform" user={user} />
                 <Component {...pageProps} />
                 <Footer />
             </Layout>

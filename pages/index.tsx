@@ -66,21 +66,21 @@ export default function Index() {
         <Pane className="projects">
           <Project
             name="mail"
+            color="#E77500"
             description="Send emails to all undergraduate students, instantly."
+            icon={EnvelopeIcon}
+          />
+          <Project
+            name="stuff"
+            color="#3366FF"
+            description="All the stuff, in one place. From sales to lost & found, and beyond."
             icon={EnvelopeIcon}
           />
           <Project
             name="club"
             color="#6C47AE"
-            description="Join the team working on Hoagie and be part of real development projects."
+            description="Join the Hoagie team and contribute to real development projects."
             icon={ShapesIcon}
-          />
-          <Project
-            name="trade"
-            color="#6C47AE"
-            description="Buy, sell, and trade with other students."
-            icon={ExchangeIcon}
-            isComingSoon
           />
           <Project
             name="menus"
