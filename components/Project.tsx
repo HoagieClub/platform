@@ -1,4 +1,4 @@
-import { Card, Pane, Text, EnvelopeIcon } from "evergreen-ui"
+import { Card, Pane, Text, EnvelopeIcon, Paragraph } from "evergreen-ui"
 import Link from "next/link";
 import styles from './Project.module.css'
 
@@ -59,26 +59,41 @@ const Project = ({
                     paddingX={20}
                     color={black}
                 >
-                    <Pane fontSize="18pt">
+                    <Pane marginBottom={8}>
                         { isComingSoon && 
-                            <Pane className={styles.status}>
+                            <Pane className={styles.status} marginBottom={8}>
                                 Coming Soon
                             </Pane>
                         }
-                        hoagie
-                        <Text fontSize="18pt" display="inline" color={color} fontWeight="bold">
-                            {name}
+                        <Text
+                            display="inline-block"
+                            className="hoagie"
+                            color="grey900"
+                            fontWeight={600}
+                            fontSize={22}
+                        >
+                            hoagie
+                        </Text>
+                        <Text
+                            display="inline-block"
+                            className="hoagie"
+                            color={color}
+                            fontWeight={600}
+                            fontSize={22}
+                        >{name}
                         </Text>
                     </Pane>
                     <Pane
                         maxWidth="240px"
-                        marginTop="3px"
-                        fontSize="11pt"
-                        fontWeight={200}
-                        lineHeight="15px"
-                        color="#545454"
                     >
-                        {description}
+                        <Paragraph
+                            size={400}
+                            fontWeight={300}
+                            color="grey700"
+                            lineHeight="18px"
+                        >
+                            {description}
+                        </Paragraph>
                     </Pane>
                 </Pane>
             </Card>
