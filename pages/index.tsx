@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useUser } from '@auth0/nextjs-auth0'
 import Project from '../components/Project'
-import { Pane, majorScale, EnvelopeIcon, BoxIcon, CodeIcon, AnnotationIcon, Code } from 'evergreen-ui'
+import { Pane, majorScale, EnvelopeIcon, BoxIcon, CodeIcon, CalendarIcon, Code } from 'evergreen-ui'
 import Link from 'next/link'
 
 
@@ -83,11 +83,10 @@ export default function Index() {
             icon={CodeIcon}
           />
           <Project
-            name="menus"
-            color="#6C47AE"
-            description="Get the latest information from all campus cafeterias."
-            icon={AnnotationIcon}
-            isComingSoon
+            name="plan"
+            color="#84A5CE"
+            description="Plan your next semesters with our course planning tool."
+            icon={CalendarIcon}
           />
         </Pane>
         <Pane
