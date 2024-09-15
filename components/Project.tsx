@@ -9,6 +9,7 @@ interface ProjectProps {
     color?: string;
     isDisabled?: boolean;
     isComingSoon?: boolean;
+    isNew?: boolean;
 }
 
 const Project = ({
@@ -18,6 +19,7 @@ const Project = ({
     color='hoagie-orange',
     isComingSoon = false,
     isDisabled = false,
+    isNew = false,
     }:ProjectProps) => {
     const Icon = icon;
     isDisabled = isDisabled || isComingSoon;
@@ -82,6 +84,34 @@ const Project = ({
                             fontSize={22}
                         >{name}
                         </Text>
+                        {isNew && <Text
+                            display="inline-block"
+                            className="hoagie"
+                            style={{
+                              backgroundImage: `linear-gradient(
+                                90deg,
+                                hsl(0deg 73% 75%) 0%,
+                                hsl(12deg 94% 76%) 19%,
+                                hsl(22deg 100% 75%) 27%,
+                                hsl(33deg 100% 74%) 34%,
+                                hsl(44deg 82% 72%) 41%,
+                                hsl(69deg 51% 70%) 47%,
+                                hsl(107deg 44% 75%) 53%,
+                                hsl(149deg 45% 73%) 59%,
+                                hsl(175deg 52% 64%) 66%,
+                                hsl(190deg 77% 57%) 73%,
+                                hsl(201deg 97% 62%) 81%,
+                                hsl(225deg 100% 76%) 100%
+                              )`,
+                              WebkitBackgroundClip: 'text',
+                              WebkitTextFillColor: 'transparent',
+                              fontWeight: 600,
+                              fontSize: 22,
+                              paddingLeft: '5px'
+                            }}
+                        >
+                            {"(new!)"}
+                        </Text>}
                     </Pane>
                     <Pane
                         maxWidth="240px"

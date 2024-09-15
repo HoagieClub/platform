@@ -87,6 +87,7 @@ export default function Index() {
             color="#FFB020"
             description="Explore courses, read reviews, and plan your four-year schedule."
             icon={CalendarIcon}
+            isNew = {true}
           />
         </Pane>
         <Pane
