@@ -84,8 +84,8 @@ export default function Index() {
           />
           <Project
             name="plan"
-            color="#84A5CE"
-            description="Plan your next semesters with our course planning tool."
+            color="#FFB020"
+            description="Explore courses, read reviews, and plan your four-year schedule."
             icon={CalendarIcon}
           />
         </Pane>
