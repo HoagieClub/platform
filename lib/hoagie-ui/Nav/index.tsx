@@ -97,7 +97,7 @@ function Nav({
                                         is="a"
                                         id={tab.title}
                                         isSelected={router?.pathname === tab.href}
-                                        appearance="navbar"
+                                        appearance="primary"
                                     >
                                         {tab.title}
                                     </Tab>
@@ -114,7 +114,7 @@ function Nav({
                                 <Avatar
                                     name={uName}
                                     style={{ cursor: 'pointer' }}
-                                    color={theme.title}
+                                    color={theme.colors.blue100}
                                     size={40}
                                     marginLeft={majorScale(4)}
                                 />

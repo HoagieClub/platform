@@ -1,26 +1,8 @@
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { useUser } from '@auth0/nextjs-auth0'
 import { Pane, Button, majorScale, LayoutAutoIcon } from 'evergreen-ui'
 
 
 export default function FAQ() {
-  const { user, error, isLoading } = useUser();
-
-  const router = useRouter()
-  useEffect(() => {
-      const queryParams = new URLSearchParams(location.search)
-
-      if (queryParams.has('code')) {
-        queryParams.delete('code')
-        queryParams.delete('state')
-        // TODO: add support for other params to persist using 
-        // queryParam.toString() or remove the queryParams method
-        router.replace("/", undefined, { shallow: true })
-      }
-    }, [])
-
     const Section = (props) => (
       <Pane>
         <Pane
@@ -85,10 +67,6 @@ export default function FAQ() {
                   <p>
                     Hoagie is more than just a couple of different campus applications; it is an integrated system. Every application is built with others in mind, filling different gaps in your campus experience. Hoagie Apps allow you to use the same profile across the entire system, meaning you can do things like save your favorite courses in one application and then see them pop up on a different one instantly.
                   </p>
-                  <p>
-                    If you're interested in being part of the team creating this platform—the Hoagie <b>Club</b>—click the button below to apply to Hoagie!
-                  </p>
-                  <a target="_blank" href="https://tally.so/r/nPROP3"><Button size="large">Apply to Hoagie</Button></a>
               </Section>
               <Section title="How does this work?">
                 The applications are all built from scratch, using shared UI elements, frameworks, and APIs. We also aim to have a defined tech stack, development practices, and guides, simulating the work style of real tech companies. Hoagie's applications being built for one another has its benefits: all apps can get the latest updates at the same time, show things like your set course schedule across different applications, and just generally provide a better user experience. 
