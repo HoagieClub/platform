@@ -1,27 +1,9 @@
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
-import { useUser } from '@auth0/nextjs-auth0'
 import Project from '../components/Project'
 import { Pane, majorScale, EnvelopeIcon, BoxIcon, CodeIcon, CalendarIcon, Code } from 'evergreen-ui'
 import Link from 'next/link'
 
 
 export default function Index() {
-  const { user, error, isLoading } = useUser();
-
-  const router = useRouter()
-  useEffect(() => {
-      const queryParams = new URLSearchParams(location.search)
-
-      if (queryParams.has('code')) {
-        queryParams.delete('code')
-        queryParams.delete('state')
-        // TODO: add support for other params to persist using 
-        // queryParam.toString() or remove the queryParams method
-        router.replace("/", undefined, { shallow: true })
-      }
-    }, [])
-
     const Section = (props) => (
       <Pane>
         <Pane
