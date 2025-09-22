@@ -30,7 +30,7 @@ function ProfileCard({ user }:CardProps) {
             flexDirection="column"
             alignItems="center"
         >
-            <Avatar name={name} color={theme.title} size={40} />
+            <Avatar name={name} backgroundColor={theme.colors.blue100} size={40} />
             <Heading size={500} marginTop={majorScale(1)}>
                 {name}
             </Heading>
