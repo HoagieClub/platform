@@ -17,12 +17,12 @@ const platformStats = [
 // positions), tweak top/offset/width/rotate/startPx to taste. startPx staggers
 // when each doodle starts gliding in (px of page scroll).
 const doodles = [
-  { src: '/doodles/SmileyIcon.svg', side: 'left' as const, top: '-48px', offset: '-90px', width: 130, rotate: -8, startPx: 0 },
-  { src: '/doodles/EnvelopeIcon.svg', side: 'right' as const, top: '-4px', offset: '-80px', width: 118, rotate: 10, startPx: 10 },
-  { src: '/doodles/ChecklistIcon.svg', side: 'left' as const, top: '146px', offset: '-118px', width: 126, rotate: 6, startPx: 20 },
-  { src: '/doodles/TShirtIcon.svg', side: 'right' as const, top: '182px', offset: '-102px', width: 122, rotate: -7, startPx: 30 },
-  { src: '/doodles/MugIcon.svg', side: 'left' as const, top: '340px', offset: '-74px', width: 92, rotate: 11, startPx: 40 },
-  { src: '/doodles/QuestionMarkIcon.svg', side: 'right' as const, top: '354px', offset: '-66px', width: 92, rotate: -10, startPx: 50 },
+  { src: '/doodles/SmileyIcon.svg', side: 'left' as const, top: '-65px', offset: '-160px', width: 176, rotate: -8, startPx: 0 },
+  { src: '/doodles/EnvelopeIcon.svg', side: 'left' as const, top: '70px', offset: '-320px', width: 220, rotate: 10, startPx: 10 },
+  { src: '/doodles/ChecklistIcon.svg', side: 'left' as const, top: '280px', offset: '-92px', width: 124, rotate: 11, startPx: 20 },
+  { src: '/doodles/TShirtIcon.svg', side: 'right' as const, top: '100px', offset: '-300px', width: 220, rotate: -7, startPx: 10 },
+  { src: '/doodles/MugIcon.svg', side: 'right' as const, top: '280px', offset: '-92px', width: 124, rotate: -11, startPx: 20 },
+  { src: '/doodles/QuestionMarkIcon.svg', side: 'right' as const, top: '-65px', offset: '-150px', width: 124, rotate: 30, startPx: 0 },
 ]
 
 export default function Index() {
@@ -149,9 +149,6 @@ export default function Index() {
                 ))}
               </Pane>
             </Pane>
-          </Pane>
-          <Pane className="platform-stats-footer">
-            Made by <b>Hoagie Club.</b>
           </Pane>
         </Pane>
         </Pane>
