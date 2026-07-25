@@ -1,4 +1,5 @@
 import Project from '../components/Project'
+import Doodle from '../components/Doodle'
 import { Pane, majorScale, EnvelopeIcon, BoxIcon, CodeIcon, CalendarIcon, Code } from 'evergreen-ui'
 import Link from 'next/link'
 
@@ -9,6 +10,19 @@ const platformStats = [
   { value: '5000+', label: 'courses and reviews', color: '#F2A900' },
   { value: '800+', label: 'menu items', color: '#0A8A00' },
   { value: '50+', label: 'club members', color: '#6C47AE' },
+]
+
+// Decorative doodles scattered around the project card grid. Positions are
+// approximate relative to the grid's edges (px offsets, not tied to card
+// positions), tweak top/offset/width/rotate/startPx to taste. startPx staggers
+// when each doodle starts gliding in (px of page scroll).
+const doodles = [
+  { src: '/doodles/SmileyIcon.svg', side: 'left' as const, top: '-48px', offset: '-90px', width: 130, rotate: -8, startPx: 0 },
+  { src: '/doodles/EnvelopeIcon.svg', side: 'right' as const, top: '-4px', offset: '-80px', width: 118, rotate: 10, startPx: 10 },
+  { src: '/doodles/ChecklistIcon.svg', side: 'left' as const, top: '146px', offset: '-118px', width: 126, rotate: 6, startPx: 20 },
+  { src: '/doodles/TShirtIcon.svg', side: 'right' as const, top: '182px', offset: '-102px', width: 122, rotate: -7, startPx: 30 },
+  { src: '/doodles/MugIcon.svg', side: 'left' as const, top: '340px', offset: '-74px', width: 92, rotate: 11, startPx: 40 },
+  { src: '/doodles/QuestionMarkIcon.svg', side: 'right' as const, top: '354px', offset: '-66px', width: 92, rotate: -10, startPx: 50 },
 ]
 
 export default function Index() {
@@ -53,38 +67,43 @@ export default function Index() {
         >
           Welcome to <b>Hoagie</b>, the Princeton application system.
         </Pane>
-        <Pane className="projects">
-          <Project
-            name="mail"
-            color="#E77500"
-            description="Send emails to all undergraduate students, instantly."
-            icon={EnvelopeIcon}
-          />
-          <Project
-            name="meal"
-            color="#008000"
-            description="All menus for campus dining halls and cafes food and drink."
-            icon="/MealIcon.svg"
-            isNew = {true}
-          />
-          <Project
-            name="plan"
-            color="#FFB020"
-            description="Explore courses, read reviews, and plan your four-year schedule."
-            icon={CalendarIcon}
-          />
-          <Project
-            name="stuff"
-            color="#3366FF"
-            description="All the stuff, in one place. From sales to lost & found, and beyond."
-            icon={BoxIcon}
-          />
-          <Project
-            name="club"
-            color="#6C47AE"
-            description="Join the Hoagie team and contribute to real development projects."
-            icon={CodeIcon}
-          />
+        <Pane position="relative" zIndex={0}>
+          {doodles.map((doodle) => (
+            <Doodle key={doodle.src} {...doodle} />
+          ))}
+          <Pane className="projects">
+            <Project
+              name="mail"
+              color="#E77500"
+              description="Send emails to all undergraduate students, instantly."
+              icon={EnvelopeIcon}
+            />
+            <Project
+              name="meal"
+              color="#008000"
+              description="All menus for campus dining halls and cafes food and drink."
+              icon="/MealIcon.svg"
+              isNew = {true}
+            />
+            <Project
+              name="plan"
+              color="#FFB020"
+              description="Explore courses, read reviews, and plan your four-year schedule."
+              icon={CalendarIcon}
+            />
+            <Project
+              name="stuff"
+              color="#3366FF"
+              description="All the stuff, in one place. From sales to lost & found, and beyond."
+              icon={BoxIcon}
+            />
+            <Project
+              name="club"
+              color="#6C47AE"
+              description="Join the Hoagie team and contribute to real development projects."
+              icon={CodeIcon}
+            />
+          </Pane>
         </Pane>
         <Pane
           fontSize="16pt"

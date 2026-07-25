@@ -1,5 +1,6 @@
 body {
     background-color: #E9DDFE;
+    overflow-x: hidden;
 }
 
 .projects {
