@@ -2,6 +2,14 @@ import Project from '../components/Project'
 import { Pane, majorScale, EnvelopeIcon, BoxIcon, CodeIcon, CalendarIcon, Code } from 'evergreen-ui'
 import Link from 'next/link'
 
+const platformStats = [
+  { value: '5200', label: 'Princeton undergrads reached', color: '#F04B4B' },
+  { value: '1200+', label: 'emails sent this week', color: '#F28A00' },
+  { value: '340', label: 'listings on Stuff right now', color: '#3B6DFF' },
+  { value: '5000+', label: 'courses and reviews', color: '#F2A900' },
+  { value: '800+', label: 'menu items', color: '#0A8A00' },
+  { value: '50+', label: 'club members', color: '#6C47AE' },
+]
 
 export default function Index() {
     const Section = (props) => (
@@ -53,6 +61,19 @@ export default function Index() {
             icon={EnvelopeIcon}
           />
           <Project
+            name="meal"
+            color="#008000"
+            description="All menus for campus dining halls and cafes food and drink."
+            icon="/MealIcon.svg"
+            isNew = {true}
+          />
+          <Project
+            name="plan"
+            color="#FFB020"
+            description="Explore courses, read reviews, and plan your four-year schedule."
+            icon={CalendarIcon}
+          />
+          <Project
             name="stuff"
             color="#3366FF"
             description="All the stuff, in one place. From sales to lost & found, and beyond."
@@ -63,13 +84,6 @@ export default function Index() {
             color="#6C47AE"
             description="Join the Hoagie team and contribute to real development projects."
             icon={CodeIcon}
-          />
-          <Project
-            name="plan"
-            color="#FFB020"
-            description="Explore courses, read reviews, and plan your four-year schedule."
-            icon={CalendarIcon}
-            isNew = {true}
           />
         </Pane>
         <Pane
@@ -82,6 +96,44 @@ export default function Index() {
           <p>
             <b><u><Link href='/FAQ'>Read the FAQ here</Link></u></b>.
           </p>
+        </Pane>
+        <Pane className="platform-stats-section">
+          <Pane className="platform-stats-panel">
+            <Pane className="platform-stats-mascot" aria-hidden="true">
+              <img
+                className="platform-stats-mascot-icon"
+                src="/HoagieIcon.svg"
+                alt=""
+              />
+              <img
+                className="platform-stats-mascot-arm"
+                src="/HoagieArmIcon.svg"
+                alt=""
+              />
+            </Pane>
+            <Pane className="platform-stats-copy">
+              <Pane className="platform-stats-title">
+                Built by a handful of Princeton students.
+                <br />
+                Used by 90%+ of them.
+              </Pane>
+              <Pane className="platform-stats-grid">
+                {platformStats.map((stat) => (
+                  <Pane key={stat.label} className="platform-stat">
+                    <Pane className="platform-stat__value" style={{ color: stat.color }}>
+                      {stat.value}
+                    </Pane>
+                    <Pane className="platform-stat__label">
+                      {stat.label}
+                    </Pane>
+                  </Pane>
+                ))}
+              </Pane>
+            </Pane>
+          </Pane>
+          <Pane className="platform-stats-footer">
+            Made by <b>Hoagie Club.</b>
+          </Pane>
         </Pane>
         </Pane>
       </Pane>

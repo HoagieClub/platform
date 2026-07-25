@@ -1,15 +1,19 @@
 import { Card, Pane, Text, EnvelopeIcon, Paragraph } from "evergreen-ui"
 import Link from "next/link";
 import styles from './Project.module.css'
+import type { ComponentType } from 'react'
+
+type ProjectIcon = ComponentType<{ size?: number; color?: string }> | string
 
 interface ProjectProps {
     name: string;
     description: string;
-    icon: (typeof EnvelopeIcon);
+    icon: ProjectIcon;
     color?: string;
     isDisabled?: boolean;
     isComingSoon?: boolean;
     isNew?: boolean;
+    direction?: "left" | "right";
 }
 
 const Project = ({
@@ -21,7 +25,6 @@ const Project = ({
     isDisabled = false,
     isNew = false,
     }:ProjectProps) => {
-    const Icon = icon;
     isDisabled = isDisabled || isComingSoon;
     color = isDisabled ? "#686868" : color;
 
@@ -52,7 +55,21 @@ const Project = ({
                     borderTopLeftRadius={10}
                     borderBottomLeftRadius={10}
                 >
-                    <Icon size={35} color={white} />
+                    {typeof icon === 'string' ? (
+                        <img
+                            src={icon}
+                            alt=""
+                            aria-hidden="true"
+                            width={35}
+                            height={35}
+                            style={{ objectFit: 'contain' }}
+                        />
+                    ) : (
+                        (() => {
+                            const Icon = icon;
+                            return <Icon size={35} color={white} />;
+                        })()
+                    )}
                 </Pane>
                 <Pane 
                     display="flex" 

@@ -10,3 +10,177 @@ body {
     justify-content: center;
     gap: 30px;
 }
+
+.platform-stats-section {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+.platform-stats-panel {
+    position: relative;
+    width: 100%;
+    max-width: 860px;
+    min-height: 340px;
+    border-radius: 42px;
+    background: #f8f5ff;
+    box-shadow: 0 20px 44px rgba(103, 73, 154, 0.12);
+    padding: 30px 34px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: visible;
+}
+
+.platform-stats-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 660px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.platform-stats-title {
+    text-align: center;
+    color: #6b49ac;
+    font-size: clamp(22px, 3.4vw, 35px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    max-width: 680px;
+    margin-top: 10px;
+}
+
+.platform-stats-badge {
+    position: absolute;
+    right: 28px;
+    top: 24px;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #c287ff 0%, #9e60ff 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    box-shadow: 0 6px 16px rgba(110, 72, 176, 0.22);
+}
+
+.platform-stats-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px 18px;
+    margin-top: 44px;
+}
+
+.platform-stat {
+    text-align: center;
+}
+
+.platform-stat__value {
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+}
+
+.platform-stat__label {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #5e5e73;
+}
+
+.platform-stats-mascot {
+    position: absolute;
+    left: -44px;
+    bottom: 16px;
+    width: 160px;
+    height: 190px;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+}
+
+.platform-stats-mascot-icon {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    width: 92px;
+    height: auto;
+}
+
+.platform-stats-mascot-arm {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 128px;
+    height: auto;
+    transform: translate(-2px, 10px);
+}
+
+.platform-stats-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: #2c2334;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+@media (max-width: 760px) {
+    .platform-stats-panel {
+        padding: 24px 18px 24px;
+        border-radius: 30px;
+    }
+
+    .platform-stats-copy {
+        align-items: center;
+    }
+
+    .platform-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 16px;
+        margin-top: 26px;
+    }
+
+    .platform-stats-badge {
+        right: 18px;
+        top: 18px;
+    }
+
+    .platform-stats-mascot {
+        width: 132px;
+        height: 160px;
+        left: -24px;
+        bottom: 10px;
+    }
+
+    .platform-stats-mascot-icon {
+        width: 76px;
+        left: 14px;
+        bottom: 14px;
+    }
+
+    .platform-stats-mascot-arm {
+        width: 104px;
+    }
+}
+
+@media (max-width: 520px) {
+    .platform-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .platform-stats-title {
+        padding-right: 0;
+    }
+}
