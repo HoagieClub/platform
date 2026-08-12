@@ -5,3 +5,14 @@
 .card:hover {
     background-color: #F7F7F7;
 }
+
+.preview {
+    cursor: pointer;
+    border-radius: 4.659px;
+    padding: 2px 6px;
+    background: linear-gradient(90deg, #FFF 0%, #F7F7F7 100%);
+}
+
+.preview:hover {
+    background: linear-gradient(90deg, #F2F2F2 0%, #E4E4E4 100%);
+}

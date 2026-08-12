@@ -199,6 +199,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"countup.js@npm:^2.8.0":
+  version: 2.10.1
+  resolution: "countup.js@npm:2.10.1"
+  checksum: 10c0/7d702a1c27a55abbb493aef70930c250cf761d3f14d49a2589d5bf3b300aa97a994740ed86f6715e41265d70a747359c5da2818039edf9b6a8ce7c38a299d773
+  languageName: node
+  linkType: hard
+
 "css-in-js-utils@npm:^2.0.0":
   version: 2.0.1
   resolution: "css-in-js-utils@npm:2.0.1"
@@ -293,6 +300,7 @@ __metadata:
     next-seo: "npm:^4.26.0"
     prettier: "npm:2.3.2"
     react: "npm:^18.3.1"
+    react-countup: "npm:^6.5.3"
     react-dom: "npm:^18.3.1"
     typescript: "npm:^5.7.2"
   languageName: unknown
@@ -508,6 +516,17 @@ __metadata:
     object-assign: "npm:^4.1.1"
     react-is: "npm:^16.13.1"
   checksum: 10c0/59ece7ca2fb9838031d73a48d4becb9a7cc1ed10e610517c7d8f19a1e02fa47f7c27d557d8a5702bec3cfeccddc853579832b43f449e54635803f277b1c78077
+  languageName: node
+  linkType: hard
+
+"react-countup@npm:^6.5.3":
+  version: 6.5.3
+  resolution: "react-countup@npm:6.5.3"
+  dependencies:
+    countup.js: "npm:^2.8.0"
+  peerDependencies:
+    react: ">= 16.3.0"
+  checksum: 10c0/d18beba2a7dc5f2dce346d47c90e76570f862a7f49acb7ad73028acfd584f691c84dde3b1c8743181d158636a20a7b9201ad8c6c8b4d310ff02ca68eaccf997f
   languageName: node
   linkType: hard
 

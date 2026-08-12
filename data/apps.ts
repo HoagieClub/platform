@@ -17,6 +17,7 @@ export const apps: AppCardProps[] = [
         color: hoagieColors.mail,
         description: 'Send emails to all undergraduate students, instantly.',
         icon: EnvelopeIcon,
+        previewImage: '/mail-preview.png',
     },
     {
         name: 'meal',
