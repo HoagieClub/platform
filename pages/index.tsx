@@ -1,90 +1,64 @@
-import Project from '../components/Project'
-import { Pane, majorScale, EnvelopeIcon, BoxIcon, CodeIcon, CalendarIcon, Code } from 'evergreen-ui'
+import { Pane, majorScale } from 'evergreen-ui'
 import Link from 'next/link'
-
+import AppGrid from '../components/AppGrid'
+import StatsPanel from '../components/StatsPanel'
+import { apps } from '../data/apps'
+import { stats } from '../data/stats'
 
 export default function Index() {
-    const Section = (props) => (
-      <Pane>
-        <Pane
-          fontSize="22pt"
-          lineHeight="40px"
-          marginTop="10px"
-        >
-          {props.title} <b>{props.bold}</b>
-        </Pane>
-        <Pane>
-            <Pane 
-            textAlign="left"
-            marginTop="30px"
-            marginBottom="40px"
-            fontSize="15pt"
-            >
-              {props.children}
-          </Pane>
-        </Pane>
-      </Pane>
-
-    )
-
     return (
-      <Pane>
-      <Pane display="flex" justifyContent="center" 
-      alignItems="center"
-      marginX={majorScale(4)}
-      paddingBottom={majorScale(10)}
-      paddingTop={majorScale(8)}
-      >
-        <Pane 
-          width="100%" 
-          maxWidth="820px"
-        >
         <Pane
-          fontSize="16pt"
-          marginBottom="40px"
+            display="flex"
+            justifyContent="center"
+            marginX={majorScale(4)}
+            paddingTop={majorScale(5)}
+            paddingBottom={majorScale(6)}
         >
-          Welcome to <b>Hoagie</b>, the Princeton application system.
+            <Pane width="100%" maxWidth={1160}>
+                <Pane
+                    is="h1"
+                    margin={0}
+                    marginBottom={48}
+                    textAlign="center"
+                    fontSize={25}
+                    fontWeight={400}
+                    lineHeight="36px"
+                    color="gray900"
+                >
+                    Welcome <b>Hoagie</b>, Princeton&apos;s application system.
+                </Pane>
+                <AppGrid apps={apps} />
+                <Pane
+                    is="p"
+                    marginX="auto"
+                    marginTop={40}
+                    marginBottom={0}
+                    maxWidth={560}
+                    textAlign="center"
+                    fontSize={14}
+                    lineHeight="21px"
+                    color="gray800"
+                >
+                    <b>Hoagie Apps</b> are built and ran by Princeton students as
+                    part of Hoagie Club.{' '}
+                    <Link href="/FAQ">
+                        Want to learn more about how we want to change the way our
+                        campus applications work?
+                    </Link>
+                </Pane>
+                <Pane marginTop={90}>
+                    <StatsPanel
+                        title={(
+                            <>
+                                Built by a handful of Princeton students.
+                                <br />
+                                Used by 90%+ of them.
+                            </>
+                        )}
+                        stats={stats}
+                    />
+                </Pane>
+            </Pane>
         </Pane>
-        <Pane className="projects">
-          <Project
-            name="mail"
-            color="#E77500"
-            description="Send emails to all undergraduate students, instantly."
-            icon={EnvelopeIcon}
-          />
-          <Project
-            name="stuff"
-            color="#3366FF"
-            description="All the stuff, in one place. From sales to lost & found, and beyond."
-            icon={BoxIcon}
-          />
-          <Project
-            name="club"
-            color="#6C47AE"
-            description="Join the Hoagie team and contribute to real development projects."
-            icon={CodeIcon}
-          />
-          <Project
-            name="plan"
-            color="#FFB020"
-            description="Explore courses, read reviews, and plan your four-year schedule."
-            icon={CalendarIcon}
-            isNew = {true}
-          />
-        </Pane>
-        <Pane
-          fontSize="16pt"
-          marginTop="40px"
-        >
-          <p>
-            Hoagie Platform and its Apps are built and ran by Princeton students as part of Hoagie Club.  Want to learn more about how we want to change the way our campus applications work?<br />
-          </p>
-          <p>
-            <b><u><Link href='/FAQ'>Read the FAQ here</Link></u></b>.
-          </p>
-        </Pane>
-        </Pane>
-      </Pane>
-      </Pane>
-    );
+    )
 }
