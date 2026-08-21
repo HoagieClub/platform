@@ -1,12 +1,4 @@
 body {
-    background-color: #E9DDFE;
-}
-
-.projects {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
+    background-color: #FBF9FF;
+    overflow-x: hidden;
 }
