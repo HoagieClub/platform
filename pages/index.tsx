@@ -39,7 +39,7 @@ export default function Index() {
                     lineHeight="36px"
                     color="gray900"
                 >
-                    Welcome <b>Hoagie</b>, Princeton&apos;s application system.
+                    Welcome to <b>Hoagie</b>, Princeton&apos;s application system.
                 </Pane>
                 <Pane position="relative" zIndex={0}>
                     {doodles.map((doodle) => (
