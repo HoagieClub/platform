@@ -1,0 +1,19 @@
+.doodleWrap {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.doodleImg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Hide decorative doodles on narrow viewports so they never crowd the cards. */
+@media (max-width: 760px) {
+    .doodleWrap {
+        display: none;
+    }
+}
