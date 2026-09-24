@@ -4,7 +4,7 @@ import { hoagieColors } from './colors'
 /** Platform stats shown in the landing page banner, in display order. */
 export const stats: StatItemProps[] = [
     {
-        value: '5200',
+        value: '5000+',
         label: 'Princeton undergrads reached',
         color: hoagieColors.help,
     },
