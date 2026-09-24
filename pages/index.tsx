@@ -50,7 +50,7 @@ export default function Index() {
                 <Pane
                     is="p"
                     marginX="auto"
-                    marginTop={40}
+                    marginTop={70}
                     marginBottom={0}
                     maxWidth={560}
                     textAlign="center"

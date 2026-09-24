@@ -7,4 +7,5 @@ export const hoagieColors = {
     help: '#EA4040',
     calendar: '#65BCFA',
     club: '#6C47AE',
+    mealExchange: '#CF5D2C',
 }
