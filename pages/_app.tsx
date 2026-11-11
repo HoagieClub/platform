@@ -11,8 +11,8 @@ function Content({ Component, pageProps }) {
 
     return (
         <Theme palette="purple">
-            <Layout>
-                <Nav name="platform" />
+            <Layout transparent>
+
                 <Component {...pageProps} />
                 <Footer />
             </Layout>
