@@ -1,0 +1,451 @@
+/* ---------- Phones, tablets and short laptops: just the "All" view ---------- */
+/* Each app's details come from AppSections below it on these screens. */
+
+.story {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  padding: 48px 24px 32px;
+}
+
+.leftInner {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right {
+  padding: 0 24px 56px;
+}
+
+.counter {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5E584F;
+}
+
+/* "hoagie" stays put, the second word rolls to the next app */
+.wordmark {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: clamp(34px, 3.6vw, 60px);   /* small enough for hoagiecalendar on one line */
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: #141414;
+  white-space: nowrap;
+  display: flex;   /* first word, then the second right after it */
+}
+
+/* both words sit side by side on one line */
+.window {
+  display: inline-block;
+  vertical-align: top;
+  height: 1.25em;
+  /* clip only top and bottom (for the roll), so letters aren't trimmed at the sides */
+  overflow-x: visible;
+  overflow-y: clip;
+}
+
+/* the first word rolls up into place when it changes */
+.firstWord {
+  display: block;
+  height: 1.25em;
+  line-height: 1.25em;
+  animation: rollIn 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes rollIn {
+  from { transform: translateY(100%); }
+  to { transform: none; }
+}
+
+.roll {
+  display: block;
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.word {
+  display: block;
+  height: 1.25em;
+  line-height: 1.25em;   /* room for letters that hang below the line, like g */
+}
+
+/* description and button, fading in when the app changes */
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  animation: fadeUp 450ms 100ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.description {
+  margin: 0;
+  max-width: 460px;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #3D3932;
+}
+
+.hint {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5E584F;
+}
+
+
+.detail {
+  margin: 0;
+  max-width: 460px;
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #3D3932;
+}
+
+.button {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #141414;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.button:hover {
+  background: #2E2B27;
+}
+
+.soon {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5E584F;
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  justify-items: center;
+  align-items: start;
+  gap: 24px 16px;
+}
+
+/* slight alternating tilt, straightens on hover */
+.grid li {
+  transform: rotate(-1.5deg);
+  transition: transform 250ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.grid li:nth-child(even) {
+  transform: rotate(1.5deg);
+}
+
+.grid li:hover,
+.grid li:focus-within {
+  transform: rotate(0deg);
+}
+
+/* phones: each app is its own block below the grid, text then screenshot */
+.appPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 56px;
+}
+
+.panelText {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.panelTitle {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: #141414;
+}
+
+.screenshot {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  aspect-ratio: 16 / 10.5;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: white;
+}
+
+/* app color strip across the top, like the strip in every Hoagie app */
+.screenshot::before {
+  content: '';
+  flex: 0 0 8px;
+  background: var(--app-color);
+}
+
+/* the screenshot floats inside the frame with even space around it */
+.screenshot img {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: calc(100% - 64px);
+  margin: 32px;
+  object-fit: cover;   /* shows the whole crop, never cut off */
+  border-radius: 8px;
+}
+
+.placeholder {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* the rail is only used on the desktop story */
+.rail {
+  display: none;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Desktop: fixed left column, scrolling right column ---------- */
+/* Matches the media query in AppSections.module.css */
+
+@media (min-width: 1024px) and (min-height: 680px) {
+  .story {
+      flex-direction: row;
+      margin-top: -96px;   /* slides under the transparent nav */
+  }
+
+  /* tint layer behind the story, fading out over the last 360px */
+.story::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--tint);
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 50%);
+  transition: background-color 700ms ease;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 360px), transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 360px), transparent 100%);
+}
+
+  .left {
+      flex: 0 0 40%;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      box-sizing: border-box;
+      padding: 96px 32px 48px 56px;
+      display: flex;
+      align-items: center;
+  }
+
+  .leftInner {
+      gap: 8px;
+  }
+
+  .right {
+      flex: 1 1 auto;
+      min-width: 0;
+      padding: 120px 120px 0 24px;   /* right side clears the rail */
+  }
+
+  /* each panel is about a screen tall and scrolls normally */
+  .panel {
+      min-height: 100vh;
+      box-sizing: border-box;
+      padding: 96px 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .appPanel {
+      flex-direction: row;
+      gap: 0;
+  }
+
+  /* the fixed left column shows the text on desktop */
+  .panelText {
+      display: none;
+  }
+
+  /* panels rise and fade in the first time they scroll into view */
+  .panelInner {
+      transition:
+          opacity 600ms ease,
+          transform 800ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .story[data-ready='true'] .panel:not([data-entered='true']) .panelInner {
+      opacity: 0;
+      transform: translateY(64px) scale(0.96);
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    max-width: 820px;   /* room for 4 cards at most, so wide screens get two rows of 4 */
+    margin: 0 auto;
+}
+
+  .screenshot {
+      max-height: 72vh;
+      border-radius: 22px;
+
+  }
+
+  .screenshot::before {
+      flex-basis: 10px;
+  }
+
+  /* rail on the right edge, shown while the story is on screen */
+  .rail {
+      display: block;
+      position: fixed;
+      top: 50%;
+      right: 24px;
+      z-index: 3;
+      transform: translateY(-50%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 250ms ease;
+  }
+
+  .rail[data-visible='true'] {
+      opacity: 1;
+      pointer-events: auto;
+  }
+
+  .rail ul {
+      list-style: none;
+      margin: 0;
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+      box-shadow: 0 4px 20px rgba(16, 24, 64, 0.08);
+  }
+
+  .railLink {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+  }
+
+  .railLink:focus-visible {
+      outline: 2px solid #141414;
+      outline-offset: 2px;
+      border-radius: 999px;
+  }
+
+  .railLabel {
+      position: absolute;
+      right: calc(100% + 12px);
+      top: 50%;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      color: #141414;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(4px, -50%);
+      transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  .railLink:hover .railLabel,
+  .railLink:focus-visible .railLabel,
+  .railLink[aria-current='true'] .railLabel {
+      opacity: 1;
+      transform: translate(0, -50%);
+  }
+
+  .railDot,
+  .railSquare {
+      width: 8px;
+      height: 8px;
+      background: #B8B2A8;
+      transition: background 200ms ease, transform 200ms ease;
+  }
+
+  .railDot {
+      border-radius: 50%;
+  }
+
+  .railSquare {
+      border-radius: 2px;
+  }
+
+  .railLink:hover .railDot,
+  .railLink:hover .railSquare,
+  .railLink[aria-current='true'] .railDot,
+  .railLink[aria-current='true'] .railSquare {
+      background: var(--app-color);
+      transform: scale(1.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roll,
+  .story,
+  .panelInner {
+      transition: none;
+  }
+
+  .details,
+  .firstWord {
+      animation: none;
+  }
+
+  .story[data-ready='true'] .panel:not([data-entered='true']) .panelInner {
+      transform: none;
+  }
+}
